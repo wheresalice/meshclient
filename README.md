@@ -1,6 +1,10 @@
 # Meshclient
 
+![Release](https://img.shields.io/github/v/release/wheresalice/meshclient)
+
 A CLI to receive [Meshtastic](https://meshtastic.org/) messages from MQTT or a radio connected to a serial port, written in Go
+
+![Screenshot](screenshot.png)
 
 ## Usage
 
