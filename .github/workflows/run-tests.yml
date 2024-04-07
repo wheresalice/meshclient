@@ -1,0 +1,45 @@
+# See more at: https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
+name: run-go-tests
+
+env:
+  GO111MODULE: on
+
+on:
+  pull_request:
+    branches:
+      - "*"
+  push:
+    branches:
+      - "*"
+  # schedule:
+  #  - cron: '1 4 * * *'
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        go-version: [1.22.x]
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Install Go ${{ matrix.go-version }}
+        uses: actions/setup-go@v4
+        with:
+          go-version: ${{ matrix.go-version }}
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Cache code
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/go/pkg/mod              # Module download cache
+            ~/.cache/go-build         # Build cache (Linux)
+            ~/Library/Caches/go-build # Build cache (Mac)
+            '%LocalAppData%\go-build' # Build cache (Windows)
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+      - name: Verify dependencies
+        run: go mod verify
+      - name: Build
+        run: go build .
