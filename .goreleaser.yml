@@ -24,6 +24,9 @@ changelog:
 # Github Release
 # ---------------------------
 release:
-  prerelease: true
-  name_template: "Release v{{.Version}}"
+  name_template: "Release {{.Version}}"
+
+builds:
+  - goos:
+      - linux
 
