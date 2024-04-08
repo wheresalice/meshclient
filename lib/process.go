@@ -1,12 +1,11 @@
 package lib
 
 import (
-	"fmt"
 	pb "github.com/meshnet-gophers/meshtastic-go/meshtastic"
 	"google.golang.org/protobuf/proto"
 )
 
-func ProcessMessage(message pb.Data) string {
+func ProcessMessage(message *pb.Data) string {
 	if message.Portnum == pb.PortNum_NODEINFO_APP {
 		var user = pb.User{}
 		proto.Unmarshal(message.Payload, &user)
@@ -36,5 +35,5 @@ func ProcessMessage(message pb.Data) string {
 		return string(message.Payload)
 	}
 
-	return fmt.Sprintf("unknown message type")
+	return "unknown message type"
 }

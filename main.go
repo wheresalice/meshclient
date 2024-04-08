@@ -80,7 +80,7 @@ func main() {
 						//log.Info(pkt.String())
 						data := pkt.GetDecoded()
 						//log.Info(processMessage(*data))
-						log.Info(lib.ProcessMessage(*data), "from", pkt.From, "portnum", data.Portnum.String())
+						log.Info(lib.ProcessMessage(data), "from", pkt.From, "portnum", data.Portnum.String())
 
 					})
 

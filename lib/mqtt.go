@@ -32,7 +32,7 @@ func ChannelHandler(channel string) mqtt.HandlerFunc {
 		var message pb.Data
 		err = proto.Unmarshal(decodedMessage, &message)
 
-		log.Info(ProcessMessage(message), "topic", m.Topic, "channel", channel, "portnum", message.Portnum.String())
+		log.Info(ProcessMessage(&message), "topic", m.Topic, "channel", channel, "portnum", message.Portnum.String())
 	}
 }
 
