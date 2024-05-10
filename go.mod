@@ -6,7 +6,7 @@ require (
 	github.com/charmbracelet/log v0.4.0
 	github.com/meshnet-gophers/meshtastic-go v0.1.7
 	github.com/urfave/cli/v2 v2.27.2
-	google.golang.org/protobuf v1.34.0
+	google.golang.org/protobuf v1.34.1
 )
 
 require (
