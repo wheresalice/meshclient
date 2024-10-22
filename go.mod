@@ -5,14 +5,14 @@ go 1.22
 require (
 	github.com/charmbracelet/log v0.4.0
 	github.com/meshnet-gophers/meshtastic-go v0.1.7
-	github.com/urfave/cli/v2 v2.27.4
+	github.com/urfave/cli/v2 v2.27.5
 	google.golang.org/protobuf v1.34.1
 )
 
 require (
 	github.com/aymanbagabas/go-osc52/v2 v2.0.1 // indirect
 	github.com/charmbracelet/lipgloss v0.10.0 // indirect
-	github.com/cpuguy83/go-md2man/v2 v2.0.4 // indirect
+	github.com/cpuguy83/go-md2man/v2 v2.0.5 // indirect
 	github.com/creack/goselect v0.1.2 // indirect
 	github.com/eclipse/paho.mqtt.golang v1.4.3 // indirect
 	github.com/go-logfmt/logfmt v0.6.0 // indirect
